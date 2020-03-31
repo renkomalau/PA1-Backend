@@ -15,7 +15,11 @@ app.use(express.static(path.join(__dirname, "./public")));
 app.get("/", (req, res) => {
     res.json({ message: "Selamat datang pada restfull api kami"});
 });
-// require("./app/routes/book.routes")(app);
+
+// user route
+require("./app/routes/user.routes")(app);
+
+// assign port
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}.`);
